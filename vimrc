@@ -65,6 +65,9 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
+" enable rainbow parentheses for all file types
+let g:rainbow_active = 1
+
 " ------------------
 " Other languages
 " ------------------
