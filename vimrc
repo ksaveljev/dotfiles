@@ -17,24 +17,18 @@ set shell=bash
 
 filetype plugin indent on
 
-" Put these in an autocmd group, so that we can delete them easily.
-augroup vimrcEx
-    au!
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
 
-    " For all text files set 'textwidth' to 78 characters.
-    autocmd FileType text setlocal textwidth=78
-
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal g`\"" |
-        \ endif
-
-augroup END
 
 syntax on
+set textwidth=80
+set encoding=utf-8
 set hlsearch
 set incsearch
 set number
@@ -50,6 +44,8 @@ set autoindent
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+
+set laststatus=2
 
 " Set the color scheme
 set t_Co=256 " 256 colors
@@ -105,5 +101,8 @@ let g:haskell_conceal_wide = 1
 
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+
+au FileType haskell nnoremap <leader>t :GhcModType<cr>
+au FileType haskell nnoremap <leader>T :GhcModTypeInsert<cr>
 
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
