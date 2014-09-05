@@ -68,6 +68,7 @@ nnoremap <c-l> <c-w>l
 " enable rainbow parentheses for all file types
 let g:rainbow_active = 1
 
+
 " ------------------
 " Other languages
 " ------------------
@@ -103,9 +104,10 @@ au Bufread,BufNewFile *.hsc set filetype=haskell
 let g:haskell_conceal_wide = 1
 
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd BufWritePost *.hs GhcModCheckAndLintAsync
+autocmd BufWritePost *.hs GhcModCheckAsync
 
 au FileType haskell nnoremap <leader>t :GhcModType<cr>
 au FileType haskell nnoremap <leader>T :GhcModTypeInsert<cr>
+au FileType haskell nnoremap <leader>c :GhcModLintAsync<cr>
 
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
