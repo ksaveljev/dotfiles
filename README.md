@@ -9,6 +9,10 @@ For some plugins we need this to be installed:
 
     cabal install ghc-mod
 
+MacVim uses this font:
+
+    https://github.com/Lokaltog/powerline-fonts/tree/master/Inconsolata
+
 Get the repository
     
     git clone <this repo>
