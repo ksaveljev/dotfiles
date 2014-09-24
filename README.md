@@ -1,9 +1,9 @@
 dotfiles
 ========
 
-I am using MacVim from macports and in order to make everything work we need to install it this way (actually you only need +python27, rest is optional):
+I am using MacVim from homebrew:
 
-    sudo port install macvim +huge +python27 +ruby20 +lua
+    brew install macvim
 
 For some plugins we need this to be installed:
 
