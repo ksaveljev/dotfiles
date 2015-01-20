@@ -89,6 +89,8 @@ autocmd BufEnter *.c set formatprg=astyle\ --style=1tbs
 autocmd BufEnter *.c compiler splint
 autocmd BufWritePre *.c :%s/\s\+$//e
 
+au FileType cpp setl et ts=4 sw=4 sts=4
+
 " ------------------
 " Haskell
 " ------------------
