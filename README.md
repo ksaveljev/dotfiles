@@ -30,3 +30,5 @@ Then we need to make some symlinks:
     ln -s $PWD/vimrc ~/.vimrc
     ln -s $PWD/gvimrc ~/.gvimrc
     ln -s $PWD/vim ~/.vim
+
+    ln -s $PWD/gitconfig ~/.gitconfig

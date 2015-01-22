@@ -1,0 +1,11 @@
+[user]
+	name = Konstantin Saveljev
+	email = konstantin.saveljev@gmail.com
+
+[push]
+	default = simple
+
+[alias]
+        lg = log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)'
+        lgn = log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)' --name-only
+        lgg = log --pretty=format:'%C(yellow)%h%Cred%d%Creset - %C(cyan)%an %Creset: %s %Cgreen(%cr)' --graph
